@@ -24,6 +24,9 @@
 
 #code:
 
+from typing import List
+
+
 class Solution:
     def dfs(self, sr, sc, n, m, newImage, newColor, initialColor):
         newImage[sr][sc] = newColor
