@@ -1,0 +1,23 @@
+#leetcode : 345
+#leetcode link:https://leetcode.com/problems/reverse-vowels-of-a-string/description/?envType=study-plan-v2&envId=leetcode-75
+
+# code: 
+
+class Solution:
+    def reverseVowels(self, s: str) -> str:
+        left , right = 0, len(s)-1
+        s = list(s)
+        vowels = {"a", "A", "e", "E","i", "I","o", "O","u", "U"}
+        while left < right:
+            if s[left] not in vowels:
+                left += 1
+            elif s[right] not in vowels: 
+                right -= 1
+            else:
+                s[left], s[right] = s[right], s[left]
+                left += 1
+                right -= 1
+        return "".join(s)
+
+# TC : O(len(s))
+# if length of string is n , then TC: O(n)
